@@ -4,7 +4,7 @@
 # Ignore Gradle build output directory
 build
 
-app/.classpath
-app/.project
-app/.settings/
-app/bin/
+inventory2/.classpath
+inventory2/.project
+inventory2/.settings/
+inventory2/bin/
