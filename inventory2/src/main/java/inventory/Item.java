@@ -5,15 +5,15 @@ import java.math.BigDecimal;
 public class Item {
 
 	private String name;
+	private String sn;
+	private BigDecimal value;
 
-	public Item(String name) {
+	public Item(String name, String sn, BigDecimal value) {
 		nameNotNull(name);
 		nameNotEmpty(name);
 		this.name = name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
+		this.sn = sn;
+		this.value = value;
 	}
 
 	public String getName() {
