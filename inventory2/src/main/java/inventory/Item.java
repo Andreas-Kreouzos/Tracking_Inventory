@@ -12,6 +12,7 @@ public class Item {
 		nameNotNull(name);
 		nameNotEmpty(name);
 		serialNotNull(sn);
+		serialNotEmpty(sn);
 		this.name = name;
 		this.sn = sn;
 		this.value = value;
@@ -44,6 +45,12 @@ public class Item {
 	private void serialNotNull(String sn) {
 		if(sn == null) {
 			throw new RuntimeException("Serial number cannot be null");
+		}
+	}
+	
+	private void serialNotEmpty(String sn) {
+		if("".equals(sn)) {
+			throw new RuntimeException("Serial number cannot be empty");
 		}
 	}
 }
