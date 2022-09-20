@@ -30,4 +30,12 @@ class ItemSpec extends Specification {
 		expect:
 		item.setSerialNumberSn(sn)
 	}
+	
+	def "item takes an amount"(){
+		given:
+		Item item = new Item()
+		
+		expect:
+		item.setAmount(BigDecimal.valueOf(10))
+	}
 }
