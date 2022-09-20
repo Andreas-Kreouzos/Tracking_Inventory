@@ -39,4 +39,12 @@ class ItemSpec extends Specification {
 		e.getMessage() == "Name cannot be empty"
 	}
 	
+	def "Item's serial can't be null"() {
+		when:
+		Item item = new Item("name",null,BigDecimal.ZERO)
+		
+		then:
+		Exception e = thrown(Exception)
+		e.getMessage() == "Serial number cannot be null"
+	}
 }

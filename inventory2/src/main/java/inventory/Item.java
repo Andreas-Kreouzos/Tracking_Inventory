@@ -11,6 +11,7 @@ public class Item {
 	public Item(String name, String sn, BigDecimal value) {
 		nameNotNull(name);
 		nameNotEmpty(name);
+		serialNotNull(sn);
 		this.name = name;
 		this.sn = sn;
 		this.value = value;
@@ -18,6 +19,14 @@ public class Item {
 
 	public String getName() {
 		return name;
+	}
+	
+	public String getSn() {
+		return sn;
+	}
+	
+	public BigDecimal getValue() {
+		return value;
 	}
 	
 	private void nameNotNull(String name) {
@@ -29,6 +38,12 @@ public class Item {
 	private void nameNotEmpty(String name) {
 		if("".equals(name)) {
 			throw new RuntimeException("Name cannot be empty");
+		}
+	}
+	
+	private void serialNotNull(String sn) {
+		if(sn == null) {
+			throw new RuntimeException("Serial number cannot be null");
 		}
 	}
 }
