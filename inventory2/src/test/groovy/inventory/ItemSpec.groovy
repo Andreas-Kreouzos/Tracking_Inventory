@@ -1,45 +1,23 @@
 package inventory
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class ItemSpec extends Specification {
 	
-	def "can create an Item"() {
-		expect:
-		new Item()
-	}
-	
-	def "item takes a name"() {
-		given:
-		String name = "name"
-		
-		and:
-		Item item = new Item()
-		
-		expect:
-		item.setName(name)
-	}
-	
+	@Unroll
 	def "item returns the name"() {
 		given:
 		Item item = new Item()
 		
 		when:
-		item.setName("name")
+		item.setName(name)
 		
 		then:
-		item.getName() == "name"
-	}
-	
-	def "item returns another name"() {
-		given:
-		Item item = new Item()
+		item.getName() == name
 		
-		when:
-		item.setName("name2")
-		
-		then:
-		item.getName() == "name2"
+		where:
+		name << ["name","name2"]
 	}
 	
 	def "item take a serial number"(){
