@@ -11,6 +11,9 @@ public class Item {
 		if(name == null) {
 			throw new Exception("Name cannot be null");
 		}
+		if("".equals(name)) {
+			throw new Exception("Name cannot be empty");
+		}
 	}
 	
 	public String getName() {
