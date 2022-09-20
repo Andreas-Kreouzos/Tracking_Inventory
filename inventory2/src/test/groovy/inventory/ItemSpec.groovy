@@ -8,12 +8,9 @@ class ItemSpec extends Specification {
 	@Unroll
 	def "item returns the name"() {
 		given:
-		Item item = new Item()
+		Item item = new Item(name)
 		
-		when:
-		item.name = name
-		
-		then:
+		expect:
 		item.name == name
 		
 		where:
@@ -21,11 +18,8 @@ class ItemSpec extends Specification {
 	}
 	
 	def "name cannot be null"() {
-		given:
-		Item item = new Item()
-		
 		when:
-		item.name = null
+		Item item = new Item(null)
 		
 		then:
 		Exception e = thrown(Exception)
@@ -33,33 +27,11 @@ class ItemSpec extends Specification {
 	}
 	
 	def "name cannot be empty"() {
-		given:
-		Item item = new Item()
-		
 		when:
-		item.name = ""
+		Item item = new Item("")
 		
 		then:
 		Exception e = thrown(Exception)
 		e.getMessage() == "Name cannot be empty"
-	}
-	
-	def "item take a serial number"(){
-		given:
-		String sn = "sn"
-		
-		and:
-		Item item = new Item()
-		
-		expect:
-		item.setSerialNumberSn(sn)
-	}
-	
-	def "item takes an amount"(){
-		given:
-		Item item = new Item()
-		
-		expect:
-		item.setAmount(BigDecimal.valueOf(10))
 	}
 }
