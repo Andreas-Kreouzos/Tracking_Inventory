@@ -6,8 +6,11 @@ public class Item {
 
 	private String name;
 	
-	public void setName(String name) {
+	public void setName(String name) throws Exception {
 		this.name = name;
+		if(name == null) {
+			throw new Exception("Name cannot be null");
+		}
 	}
 	
 	public String getName() {

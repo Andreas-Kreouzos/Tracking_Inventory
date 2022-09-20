@@ -11,13 +11,25 @@ class ItemSpec extends Specification {
 		Item item = new Item()
 		
 		when:
-		item.setName(name)
+		item.name = name
 		
 		then:
-		item.getName() == name
+		item.name == name
 		
 		where:
 		name << ["name","name2"]
+	}
+	
+	def "name cannot be null"() {
+		given:
+		Item item = new Item()
+		
+		when:
+		item.name = null
+		
+		then:
+		Exception e = thrown(Exception)
+		e.getMessage() == "Name cannot be null"
 	}
 	
 	def "item take a serial number"(){
