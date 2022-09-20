@@ -31,6 +31,17 @@ class ItemSpec extends Specification {
 		item.getName() == "name"
 	}
 	
+	def "item returns another name"() {
+		given:
+		Item item = new Item()
+		
+		when:
+		item.setName("name2")
+		
+		then:
+		item.getName() == "name2"
+	}
+	
 	def "item take a serial number"(){
 		given:
 		String sn = "sn"
