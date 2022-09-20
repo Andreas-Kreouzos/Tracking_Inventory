@@ -13,6 +13,7 @@ public class Item {
 		nameNotEmpty(name);
 		serialNotNull(sn);
 		serialNotEmpty(sn);
+		valueNotNull(value);
 		this.name = name;
 		this.sn = sn;
 		this.value = value;
@@ -51,6 +52,12 @@ public class Item {
 	private void serialNotEmpty(String sn) {
 		if("".equals(sn)) {
 			throw new RuntimeException("Serial number cannot be empty");
+		}
+	}
+	
+	private void valueNotNull(BigDecimal value) {
+		if(value == null) {
+			throw new RuntimeException("Value of the item cannot be null");
 		}
 	}
 }
