@@ -18,6 +18,16 @@ class ItemSpec extends Specification {
 		
 		expect:
 		item.setName(name)
+	}
+	
+	def "item take a serial number"(){
+		given:
+		String sn = "sn"
 		
+		and:
+		Item item = new Item()
+		
+		expect:
+		item.setSerialNumberSn(sn)
 	}
 }

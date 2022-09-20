@@ -6,4 +6,7 @@ public class Item {
 		
 	}
 	
+	public void setSerialNumberSn(String sn) {
+		
+	}
 }
