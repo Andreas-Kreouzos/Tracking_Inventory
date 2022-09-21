@@ -8,4 +8,12 @@ class ItemsListSpec extends Specification {
 		expect:
 		new ItemsList();
 	}
+	
+	def "can create the ArrayList"(){
+		when:
+		ItemsList items = new ItemsList();
+		
+		then:
+		items.getItems() == new ArrayList<Item>();
+	}
 }
