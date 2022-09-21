@@ -16,4 +16,18 @@ class ItemsListSpec extends Specification {
 		then:
 		items.getItems() == new ArrayList<Item>();
 	}
+	
+	def "can add item from the console"(){
+		given:
+		ItemsList items = new ItemsList();
+		
+		and:
+		Scanner scanner = new Scanner(System.in)
+		
+		when:
+		items.getItems() == new ArrayList<Item>();
+		
+		then:
+		items.addItem(scanner)
+	}
 }
