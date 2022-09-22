@@ -3,7 +3,8 @@ package inventory
 import spock.lang.Specification
 
 class AppTest extends Specification {
-    def "application has a greeting"() {
+	
+    def "application welcomes the user"() {
         setup:
         def app = new App()
 
@@ -13,4 +14,13 @@ class AppTest extends Specification {
         then:
         result != null
     }
+	
+	def "provide the options menu to the user"() {
+		given:
+        App app = new App()
+		
+		expect:
+		app.getShowMenu()
+	}
+
 }

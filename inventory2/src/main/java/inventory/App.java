@@ -4,14 +4,20 @@
 package inventory;
 
 public class App {
-    
-	public String getGreeting() {
-        return "Welcome to Tracking Inventory";
-    }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-        
-        
-    }
+	public static void main(String[] args) {
+		System.out.println(new App().getGreeting());
+		getShowMenu();
+	}
+
+	public String getGreeting() {
+		return "Welcome to Tracking Inventory";
+	}
+
+	public static void getShowMenu() {
+		 System.out.println("Provide your choice");
+		 System.out.println("\n1. Please insert the name of the item");
+		 System.out.println("2. Please insert the name of the item");
+		 System.out.println("3. Please insert the value of the item");
+	}
 }
