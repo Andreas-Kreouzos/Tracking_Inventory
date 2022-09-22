@@ -17,31 +17,19 @@ class ItemCollectionSpec extends Specification {
 		items.getItems() == new ArrayList<Item>();
 	}
 	
-	def "can add item from the console"(){
+	def "item takes a scanner"(){
 		given:
 		ItemCollection items = new ItemCollection();
 		
 		and:
 		Scanner scanner = new Scanner(System.in)
 		
-		when:
-		items.getItems() == new ArrayList<Item>();
-		
-		then:
+		expect:
 		items.addItem(scanner)
 	}
 	
 	def "print the Menus.getShowMenu() method"(){
-		given:
-		ItemCollection items = new ItemCollection();
-		
-		and:
-		Scanner scanner = new Scanner(System.in)
-		
-		when:
-		items.addItem(scanner)
-		
-		then:
+		expect:
 		Menus.getShowMenu();
 	}
 }
