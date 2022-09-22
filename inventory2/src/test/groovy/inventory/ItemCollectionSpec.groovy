@@ -2,16 +2,16 @@ package inventory
 
 import spock.lang.Specification
 
-class ItemsListSpec extends Specification {
+class ItemCollectionSpec extends Specification {
 	
 	def "can create an ItemsList"(){
 		expect:
-		new ItemsList();
+		new ItemCollection();
 	}
 	
 	def "can create the ArrayList"(){
 		when:
-		ItemsList items = new ItemsList();
+		ItemCollection items = new ItemCollection();
 		
 		then:
 		items.getItems() == new ArrayList<Item>();
@@ -19,7 +19,7 @@ class ItemsListSpec extends Specification {
 	
 	def "can add item from the console"(){
 		given:
-		ItemsList items = new ItemsList();
+		ItemCollection items = new ItemCollection();
 		
 		and:
 		Scanner scanner = new Scanner(System.in)
@@ -30,4 +30,6 @@ class ItemsListSpec extends Specification {
 		then:
 		items.addItem(scanner)
 	}
+	
+	
 }
