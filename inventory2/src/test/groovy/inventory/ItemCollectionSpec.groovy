@@ -31,5 +31,17 @@ class ItemCollectionSpec extends Specification {
 		items.addItem(scanner)
 	}
 	
-	
+	def "print the Menus.getShowMenu() method"(){
+		given:
+		ItemCollection items = new ItemCollection();
+		
+		and:
+		Scanner scanner = new Scanner(System.in)
+		
+		when:
+		items.addItem(scanner)
+		
+		then:
+		Menus.getShowMenu();
+	}
 }

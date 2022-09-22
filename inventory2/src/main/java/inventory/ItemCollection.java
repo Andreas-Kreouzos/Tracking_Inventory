@@ -13,6 +13,6 @@ public class ItemCollection {
 	}
 	
 	public void addItem(Scanner scanner) {
-		
+		Menus.getShowMenu();
 	}
 }

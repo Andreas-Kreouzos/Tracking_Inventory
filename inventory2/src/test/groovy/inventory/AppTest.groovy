@@ -12,15 +12,6 @@ class AppTest extends Specification {
         def result = app.greeting
 
         then:
-        result != null
+        result == "Welcome to Tracking Inventory"
     }
-	
-	def "provide the options menu to the user"() {
-		given:
-        App app = new App()
-		
-		expect:
-		app.getShowMenu()
-	}
-
 }
