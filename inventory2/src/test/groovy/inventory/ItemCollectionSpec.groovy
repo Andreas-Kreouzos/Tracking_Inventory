@@ -3,28 +3,16 @@ package inventory
 import spock.lang.Specification
 
 class ItemCollectionSpec extends Specification {
-	
-	def "can create the ArrayList"(){
+
+	def "list have add an item ability"(){
 		when:
 		ItemCollection items = new ItemCollection();
 		
-		then:
-		items.getItems() == new ArrayList<Item>();
-	}
-	
-	def "item takes a scanner"(){
-		given:
-		ItemCollection items = new ItemCollection();
-		
 		and:
-		Scanner scanner = new Scanner(System.in)
+		items.getItems() == new ArrayList<Item>();
 		
-		expect:
-		items.addItem(scanner)
-	}
-	
-	def "print the Menus.getShowMenu() method"(){
-		expect:
-		Menus.getShowMenu();
+		then:
+		items.addItem()
+		
 	}
 }

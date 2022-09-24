@@ -12,7 +12,7 @@ public class ItemCollection {
 		return items = new ArrayList<Item>();
 	}
 	
-	public void addItem(Scanner scanner) {
+	public void addItem() {
 		Menus.getShowMenu();
 	}
 }
