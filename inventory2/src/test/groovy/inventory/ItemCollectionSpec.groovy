@@ -4,11 +4,6 @@ import spock.lang.Specification
 
 class ItemCollectionSpec extends Specification {
 	
-	def "can create an ItemsList"(){
-		expect:
-		new ItemCollection();
-	}
-	
 	def "can create the ArrayList"(){
 		when:
 		ItemCollection items = new ItemCollection();
