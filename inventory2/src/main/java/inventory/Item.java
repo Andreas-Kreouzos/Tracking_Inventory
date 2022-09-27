@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import exceptions.ItemNameCannotBeEmptyException;
 import exceptions.ItemNameCannotBeNullException;
+import exceptions.ItemSerialCannotBeEmptyException;
 import exceptions.ItemSerialCannotBeNullException;
 
 public class Item {
@@ -67,7 +68,7 @@ public class Item {
 	
 	private void serialNotEmpty(String sn) {
 		if("".equals(sn)) {
-			throw new RuntimeException("Serial number cannot be empty");
+			throw new ItemSerialCannotBeEmptyException();
 		}
 	}
 	
