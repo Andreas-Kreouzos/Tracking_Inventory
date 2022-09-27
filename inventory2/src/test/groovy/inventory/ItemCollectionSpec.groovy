@@ -4,15 +4,29 @@ import spock.lang.Specification
 
 class ItemCollectionSpec extends Specification {
 
-	def "list have add an item ability"(){
+	def "Add Item with Scanner"(){
+		setup:
+		Scanner scanner = new Scanner(System.in)
+		ItemCollection items = new ItemCollection()
+
 		when:
-		ItemCollection items = new ItemCollection();
+		def result = items.getItems().size()
+		items.addItem(scanner)
+
+		then:
+		result < items.getItems().size()
+	}
+	
+/*	def "list of items to json"() {
+		given:
+		List<Item> items = new ArrayList() // List of items 
+//		items.add
 		
-		and:
-		items.getItems() == new ArrayList<Item>();
+		when:"generating a json from the list"
+		def json = JsonConverter.itemsToJson(items)
 		
 		then:
-		items.addItem()
+		json == "{items}"
 		
-	}
+	}*/
 }

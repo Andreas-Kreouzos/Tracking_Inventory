@@ -2,6 +2,10 @@ package inventory;
 
 import java.math.BigDecimal;
 
+import exceptions.ItemNameCannotBeEmptyException;
+import exceptions.ItemNameCannotBeNullException;
+import exceptions.ItemSerialCannotBeNullException;
+
 public class Item {
 
 	private String name;
@@ -23,29 +27,41 @@ public class Item {
 		return name;
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public String getSn() {
 		return sn;
+	}
+	
+	public void setSn(String sn) {
+		this.sn = sn;
 	}
 	
 	public BigDecimal getValue() {
 		return value;
 	}
 	
+	public void setValue(BigDecimal value) {
+		this.value = value;
+	}
+	
 	private void nameNotNull(String name) {
 		if(name == null) {
-			throw new RuntimeException("Name cannot be null");
+			throw new ItemNameCannotBeNullException();
 		}
 	}
 
 	private void nameNotEmpty(String name) {
 		if("".equals(name)) {
-			throw new RuntimeException("Name cannot be empty");
+			throw new ItemNameCannotBeEmptyException();
 		}
 	}
 	
 	private void serialNotNull(String sn) {
 		if(sn == null) {
-			throw new RuntimeException("Serial number cannot be null");
+			throw new ItemSerialCannotBeNullException();
 		}
 	}
 	
@@ -59,5 +75,12 @@ public class Item {
 		if(value == null) {
 			throw new RuntimeException("Value of the item cannot be null");
 		}
+		
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Item [name=" + name + ", sn=" + sn + ", value=" + value + "]";
 	}
 }

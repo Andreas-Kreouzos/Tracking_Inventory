@@ -1,6 +1,9 @@
 package inventory
 
 import spock.lang.Specification
+import exceptions.ItemNameCannotBeNullException
+import exceptions.ItemSerialCannotBeNullException
+import exceptions.ItemNameCannotBeEmptyException
 import spock.lang.Unroll
 
 class ItemSpec extends Specification {
@@ -26,8 +29,8 @@ class ItemSpec extends Specification {
 		Item item = new Item(null,"sn",BigDecimal.ZERO)
 		
 		then:
-		Exception e = thrown(Exception)
-		e.getMessage() == "Name cannot be null"
+		ItemNameCannotBeNullException e = thrown()
+		e.message == "Name cannot be null"
 	}
 	
 	def "Item's name can't be empty"() {
@@ -35,8 +38,8 @@ class ItemSpec extends Specification {
 		Item item = new Item("","sn",BigDecimal.ZERO)
 		
 		then:
-		Exception e = thrown(Exception)
-		e.getMessage() == "Name cannot be empty"
+		ItemNameCannotBeEmptyException e = thrown()
+		e.message == "Name cannot be empty"
 	}
 	
 	def "Item's serial can't be null"() {
@@ -44,7 +47,7 @@ class ItemSpec extends Specification {
 		Item item = new Item("name",null,BigDecimal.ZERO)
 		
 		then:
-		Exception e = thrown(Exception)
+		ItemSerialCannotBeNullException e = thrown()
 		e.getMessage() == "Serial number cannot be null"
 	}
 	
