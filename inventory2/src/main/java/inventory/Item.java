@@ -6,6 +6,7 @@ import exceptions.ItemNameCannotBeEmptyException;
 import exceptions.ItemNameCannotBeNullException;
 import exceptions.ItemSerialCannotBeEmptyException;
 import exceptions.ItemSerialCannotBeNullException;
+import exceptions.ItemValueCannotBeNullException;
 
 public class Item {
 
@@ -74,14 +75,9 @@ public class Item {
 	
 	private void valueNotNull(BigDecimal value) {
 		if(value == null) {
-			throw new RuntimeException("Value of the item cannot be null");
+			throw new ItemValueCannotBeNullException();
 		}
 		
 		
-	}
-
-	@Override
-	public String toString() {
-		return "Item [name=" + name + ", sn=" + sn + ", value=" + value + "]";
 	}
 }

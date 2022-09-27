@@ -4,6 +4,7 @@ import spock.lang.Specification
 import exceptions.ItemNameCannotBeNullException
 import exceptions.ItemSerialCannotBeEmptyException
 import exceptions.ItemSerialCannotBeNullException
+import exceptions.ItemValueCannotBeNullException
 import exceptions.ItemNameCannotBeEmptyException
 import spock.lang.Unroll
 
@@ -66,7 +67,7 @@ class ItemSpec extends Specification {
 		Item item = new Item("name","sn",null)
 		
 		then:
-		Exception e = thrown(Exception)
+		ItemValueCannotBeNullException e = thrown()
 		e.getMessage() == "Value of the item cannot be null"
 	}
 }
