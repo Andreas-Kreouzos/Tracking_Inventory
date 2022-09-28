@@ -1,5 +1,6 @@
 package inventory
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import exceptions.ItemNameCannotBeNullException
 import java.math.BigDecimal
 
