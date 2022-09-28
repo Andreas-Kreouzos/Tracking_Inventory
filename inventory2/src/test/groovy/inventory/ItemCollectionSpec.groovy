@@ -6,7 +6,7 @@ import spock.lang.Specification
 
 class ItemCollectionSpec extends Specification {
 
-	def "Add Item with Scanner"(){
+	def "Return value from a key-pair"(){
         
 		given: 'Map contains one key-value pair'
         String key = 'key'
@@ -39,7 +39,25 @@ class ItemCollectionSpec extends Specification {
 
 	}
 	
-	
+	def "ok"(){
+		
+		given:
+		def map = new HashMap()
+		map.put("name", "Sony")
+		map.put("sn", "wert")
+		map.put("value", 50)
+		
+		
+		and:
+		def expected = new HashMap()
+		expected.put("sn", "wert")
+		expected.put("name", "Sony")
+		expected.put("value", 50)
+		
+		expect:
+		map == expected
+		
+	}
 /*	def "Test the sizey of the map"(){
 		
 		given: 'A value is found with the given key'
