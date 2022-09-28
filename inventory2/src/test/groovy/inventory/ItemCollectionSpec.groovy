@@ -1,11 +1,20 @@
 package inventory
 
+import exceptions.ItemNameCannotBeNullException
 import java.math.BigDecimal
 
 import spock.lang.Specification
 
 class ItemCollectionSpec extends Specification {
 
+	def "expect mapItem"(){
+		when:
+		new ItemCollection();
+		
+		then:
+		ItemCollection.mapItem();
+	}
+	
 	def "Return value from a key-pair"(){
         
 		given: 'Map contains one key-value pair'
@@ -39,7 +48,7 @@ class ItemCollectionSpec extends Specification {
 
 	}
 	
-	def "ok"(){
+	def "Test equality of maps regarless order"(){
 		
 		given:
 		def map = new HashMap()
@@ -58,40 +67,4 @@ class ItemCollectionSpec extends Specification {
 		map == expected
 		
 	}
-/*	def "Test the sizey of the map"(){
-		
-		given: 'A value is found with the given key'
-		def scanner = new Scanner(System.in)
-		def map = new HashMap()
-		
-		and:
-		String name = scanner.next()
-		String sn = scanner.next();
-		BigDecimal value = scanner.nextBigDecimal();
-		Item item = new Item(name, sn, value);
-		
-		when:
-		map.put("name", "name")
-		map.put("sn", "sn")
-		map.put("value", 50)
-
-		then: 'Should return the found value'
-		map.hasProperty(names) == 3
-
-	}*/
-	
-	//TO-DO: Write tests that item and map has indeed contents
-	
-/*	def "list of items to json"() {
-		given:
-		List<Item> items = new ArrayList() // List of items 
-//		items.add
-		
-		when:"generating a json from the list"
-		def json = JsonConverter.itemsToJson(items)
-		
-		then:
-		json == "{items}"
-		
-	}*/
 }

@@ -78,11 +78,4 @@ public class Item {
 			throw new ItemValueCannotBeNullException();
 		}
 	}
-
-	@Override
-	public String toString() {
-		return "Item [name=" + name + ", sn=" + sn + ", value=" + value + "]";
-	}
-	
-	
 }
